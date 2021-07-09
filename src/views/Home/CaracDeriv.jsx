@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, Grid } from "@material-ui/core";
 
-const CaracDeriv = () => {
+const CaracDeriv = ({ derived }) => {
   return (
     <Card>
       <CardHeader title="Dérivées" />
@@ -10,70 +10,70 @@ const CaracDeriv = () => {
             Vigueur (VIG)
           </Grid>
           <Grid item xs={2}>
-            12
+            {derived.VIG}
           </Grid>
 
           <Grid item xs={10}>
             Etourdissement (ETOU)
           </Grid>
           <Grid item xs={2}>
-            12
+            {derived.ETOU}
           </Grid>
 
           <Grid item xs={10}>
             Course (COU)
           </Grid>
           <Grid item xs={2}>
-            12
+            {derived.COU}
           </Grid>
 
           <Grid item xs={10}>
             Saut (SAU)
           </Grid>
           <Grid item xs={2}>
-            12
+            {derived.SAU}
           </Grid>
 
           <Grid item xs={10}>
             Points de Santé (PS)
           </Grid>
           <Grid item xs={2}>
-            12
+            {derived.PS}
           </Grid>
 
           <Grid item xs={10}>
             Endurance (END)
           </Grid>
           <Grid item xs={2}>
-            12
+            {derived.END}
           </Grid>
 
           <Grid item xs={10}>
             Encombrement (ENC)
           </Grid>
           <Grid item xs={2}>
-            12
+            {derived.ENC}
           </Grid>
 
           <Grid item xs={10}>
-            Récupération (NEC)
+            Récupération (REC)
           </Grid>
           <Grid item xs={2}>
-            12
+            {derived.REC}
           </Grid>
 
           <Grid item xs={10}>
-            Points
+            Poings
           </Grid>
           <Grid item xs={2}>
-            12
+            {derived.Poings}
           </Grid>
 
           <Grid item xs={10}>
             Pieds
           </Grid>
           <Grid item xs={2}>
-            12
+            {derived.Pied}
           </Grid>
         </Grid>
       </CardContent>

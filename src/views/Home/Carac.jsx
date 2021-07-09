@@ -1,6 +1,7 @@
-import { Card, CardContent, CardHeader, Grid } from "@material-ui/core";
+import { Card, CardContent, CardHeader, Divider, Grid } from "@material-ui/core";
+import { mean } from "ramda";
 
-const Carac = () => {
+const Carac = ({ caracs }) => {
   return (
     <Card>
       <CardHeader title="Caractéristiques" />
@@ -10,63 +11,76 @@ const Carac = () => {
             Corps (COR)
           </Grid>
           <Grid item xs={2}>
-            12
+            {caracs.COR}
           </Grid>
 
           <Grid item xs={10}>
             Réflexe (REF)
           </Grid>
           <Grid item xs={2}>
-            12
+            {caracs.REF}
           </Grid>
 
           <Grid item xs={10}>
             Dextérité (DEX)
           </Grid>
           <Grid item xs={2}>
-            12
+            {caracs.DEX}
           </Grid>
 
           <Grid item xs={10}>
             Vitesse (VIT)
           </Grid>
           <Grid item xs={2}>
-            12
+            {caracs.VIT}
           </Grid>
 
           <Grid item xs={10}>
             Technique (TECH)
           </Grid>
           <Grid item xs={2}>
-            12
+            {caracs.TECH}
           </Grid>
 
           <Grid item xs={10}>
             Intelligence (INT)
           </Grid>
           <Grid item xs={2}>
-            12
+            {caracs.INT}
           </Grid>
 
           <Grid item xs={10}>
             Volonté (VOL)
           </Grid>
           <Grid item xs={2}>
-            12
+            {caracs.VOL}
           </Grid>
 
           <Grid item xs={10}>
             Empathie (EMP)
           </Grid>
           <Grid item xs={2}>
-            12
+            {caracs.EMP}
           </Grid>
 
           <Grid item xs={10}>
             Chance (CHA)
           </Grid>
           <Grid item xs={2}>
-            12
+            {caracs.CHA}
+          </Grid>
+        </Grid>
+
+        <br />
+        <Divider />
+        <br />
+
+        <Grid container spacing={2}>
+          <Grid item xs={10}>
+            Moyenne
+          </Grid>
+          <Grid item xs={2}>
+            {mean(Object.values(caracs)).toFixed(2)}
           </Grid>
         </Grid>
       </CardContent>
