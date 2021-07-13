@@ -155,7 +155,9 @@ const Home = () => {
                     "\n- Influence: " +
                     Parcours.Ennemies.influence[d4()] +
                     "\n- Etat: " +
-                    Parcours.Ennemies.state[d10()],
+                    Parcours.Ennemies.state[d10()] +
+                    "\n- Puissance: " +
+                    d10(),
                 };
               }
               break;
