@@ -1,9 +1,10 @@
-import { Card, CardContent, CardHeader, Divider, Grid } from "@material-ui/core";
+import { CardContent, CardHeader, Divider, Grid } from "@material-ui/core";
 import { mean } from "ramda";
+import BrightCard from "../Common/BrightCard";
 
 const Carac = ({ caracs }) => {
   return (
-    <Card>
+    <BrightCard>
       <CardHeader title="Caractéristiques" />
       <CardContent>
         <Grid container spacing={2}>
@@ -84,7 +85,7 @@ const Carac = ({ caracs }) => {
           </Grid>
         </Grid>
       </CardContent>
-    </Card>
+    </BrightCard>
   );
 };
 
