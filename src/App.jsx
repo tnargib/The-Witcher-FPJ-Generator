@@ -6,7 +6,7 @@ import Home from "./views/Home/Home";
 const Container = styled("div")({
   backgroundImage: `url(${IMGBackground})`,
   backgroundSize: `cover`,
-  backgroundPosition: `center`,
+  backgroundPosition: `fixed`,
   minHeight: "100vh",
   width: "100vw",
 });

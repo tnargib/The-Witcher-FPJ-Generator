@@ -90,7 +90,7 @@ const Home = () => {
     <>
       <AppBar position="static" color="secondary">
         <Toolbar>
-          <Typography variant="h6">The Witcher generator</Typography>
+          <Typography variant="h6">The Witcher Generator</Typography>
         </Toolbar>
         <Toolbar color="secondary">
           <Grid container justify="flex-start" alignItems="stretch" spacing={3}>
