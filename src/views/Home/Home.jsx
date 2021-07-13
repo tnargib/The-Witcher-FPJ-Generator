@@ -164,18 +164,7 @@ const Home = () => {
                 };
               } else {
                 event = {
-                  Statut: cond([
-                    [equals(1), always(Parcours.Ennemies.statut["1"])],
-                    [equals(2), always(Parcours.Ennemies.statut["2"])],
-                    [equals(3), always(Parcours.Ennemies.statut["3"])],
-                    [equals(4), always(Parcours.Ennemies.statut["4"])],
-                    [equals(5), always(Parcours.Ennemies.statut["5"])],
-                    [equals(6), always(Parcours.Ennemies.statut["6"])],
-                    [equals(7), always(Parcours.Ennemies.statut["7"])],
-                    [equals(8), always(Parcours.Ennemies.statut["8"])],
-                    [equals(9), always(Parcours.Ennemies.statut["9"])],
-                    [equals(10), always(Parcours.Ennemies.statut["10"])],
-                  ])(d10()),
+                  Statut: Parcours.Ennemies.statut[d10() + ""],
                   DueTo: cond([
                     [equals(1), always(Parcours.Ennemies.dueTo["1"])],
                     [equals(2), always(Parcours.Ennemies.dueTo["2"])],
