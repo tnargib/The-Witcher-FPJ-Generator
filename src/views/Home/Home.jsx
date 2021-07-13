@@ -277,13 +277,13 @@ const Home = () => {
       <Box m={6}>
         <Container maxWidth="lg">
           <Grid container spacing={6}>
-            <Grid item xs={12} md={6} lg={3}>
+            <Grid item xs={12} md={6}>
               {caracs && <Carac caracs={caracs} />}
             </Grid>
-            <Grid item xs={12} md={6} lg={3}>
+            <Grid item xs={12} md={6}>
               {derived && <CaracDeriv derived={derived} />}
             </Grid>
-            <Grid item xs={12} lg={6}>
+            <Grid item xs={12}>
               {events && <Evenements events={events} />}
             </Grid>
           </Grid>
