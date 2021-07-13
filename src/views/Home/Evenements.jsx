@@ -19,6 +19,7 @@ const Evenements = ({ events }) => {
           <TableHead>
             <TableRow>
               <TableCell>Age</TableCell>
+              <TableCell>Type</TableCell>
               <TableCell>Evènement</TableCell>
             </TableRow>
           </TableHead>
@@ -26,6 +27,7 @@ const Evenements = ({ events }) => {
             {events.map(([year, { title, content }]) => (
               <TableRow>
                 <TableCell>{year}</TableCell>
+                <TableCell>{title}</TableCell>
                 <TableCell>{content}</TableCell>
               </TableRow>
             ))}
