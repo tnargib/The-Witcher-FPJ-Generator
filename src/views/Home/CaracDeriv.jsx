@@ -1,8 +1,9 @@
-import { Card, CardContent, CardHeader, Grid } from "@material-ui/core";
+import { CardContent, CardHeader, Grid } from "@material-ui/core";
+import BrightCard from "../Common/BrightCard";
 
 const CaracDeriv = ({ derived }) => {
   return (
-    <Card>
+    <BrightCard>
       <CardHeader title="Dérivées" />
       <CardContent>
         <Grid container spacing={2}>
@@ -77,7 +78,7 @@ const CaracDeriv = ({ derived }) => {
           </Grid>
         </Grid>
       </CardContent>
-    </Card>
+    </BrightCard>
   );
 };
 

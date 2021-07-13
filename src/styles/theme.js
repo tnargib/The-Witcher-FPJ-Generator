@@ -1,12 +1,11 @@
-import { createMuiTheme } from "@material-ui/core";
-import { yellow, blue, cyan } from "@material-ui/core/colors";
+import { createTheme } from "@material-ui/core";
+import { cyan } from "@material-ui/core/colors";
 
-const theme = createMuiTheme({
+const theme = createTheme({
   palette: {
     type: "dark",
     primary: cyan,
-    secondary:
-      {main: "#0277bd",}
+    secondary: { main: "#0277bd" },
   },
   props: {
     MuiTextField: {
