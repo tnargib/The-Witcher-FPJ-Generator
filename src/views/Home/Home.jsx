@@ -262,6 +262,11 @@ const Home = () => {
                 type="number"
                 size="small"
                 fullWidth
+                InputProps={{
+                  inputProps: {
+                    min: 10
+                  }
+                }}
                 value={age}
                 onChange={(e) => setAge(e.target.value)}
               />
