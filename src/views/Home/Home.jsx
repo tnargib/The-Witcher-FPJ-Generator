@@ -137,95 +137,62 @@ const Home = () => {
             case "friends":
               if (coin()) {
                 event = {
-                  Statut: cond([
-                    [equals(1), always(Parcours.Friends.statut["1"])],
-                    [equals(2), always(Parcours.Friends.statut["2"])],
-                    [equals(3), always(Parcours.Friends.statut["3"])],
-                    [equals(4), always(Parcours.Friends.statut["4"])],
-                    [equals(5), always(Parcours.Friends.statut["5"])],
-                    [equals(6), always(Parcours.Friends.statut["6"])],
-                    [equals(7), always(Parcours.Friends.statut["7"])],
-                    [equals(8), always(Parcours.Friends.statut["8"])],
-                    [equals(9), always(Parcours.Friends.statut["9"])],
-                    [equals(10), always(Parcours.Friends.statut["10"])],
-                  ])(d10()),
-                  CloseTo: cond([
-                    [equals(1), always(Parcours.Friends.closeTo["1"])],
-                    [equals(2), always(Parcours.Friends.closeTo["2"])],
-                    [equals(3), always(Parcours.Friends.closeTo["3"])],
-                    [equals(4), always(Parcours.Friends.closeTo["4"])],
-                    [equals(5), always(Parcours.Friends.closeTo["5"])],
-                    [equals(6), always(Parcours.Friends.closeTo["6"])],
-                    [equals(7), always(Parcours.Friends.closeTo["7"])],
-                    [equals(8), always(Parcours.Friends.closeTo["8"])],
-                    [equals(9), always(Parcours.Friends.closeTo["9"])],
-                    [equals(10), always(Parcours.Friends.closeTo["10"])],
-                  ])(d10()),
+                  title: "Ami",
+                  content:
+                    "- Relation: " +
+                    Parcours.Friends.statut[d10()] +
+                    "\n- Affinité: " +
+                    Parcours.Friends.closeTo[d10()],
                 };
               } else {
                 event = {
-                  Statut: Parcours.Ennemies.statut[d10() + ""],
-                  DueTo: cond([
-                    [equals(1), always(Parcours.Ennemies.dueTo["1"])],
-                    [equals(2), always(Parcours.Ennemies.dueTo["2"])],
-                    [equals(3), always(Parcours.Ennemies.dueTo["3"])],
-                    [equals(4), always(Parcours.Ennemies.dueTo["4"])],
-                    [equals(5), always(Parcours.Ennemies.dueTo["5"])],
-                    [equals(6), always(Parcours.Ennemies.dueTo["6"])],
-                    [equals(7), always(Parcours.Ennemies.dueTo["7"])],
-                    [equals(8), always(Parcours.Ennemies.dueTo["8"])],
-                    [equals(9), always(Parcours.Ennemies.dueTo["9"])],
-                    [equals(10), always(Parcours.Ennemies.dueTo["10"])],
-                  ])(d10()),
-                  Influence: cond([
-                    [equals(1), always(Parcours.Ennemies.influence["1"])],
-                    [equals(2), always(Parcours.Ennemies.influence["2"])],
-                    [equals(3), always(Parcours.Ennemies.influence["3"])],
-                    [equals(4), always(Parcours.Ennemies.influence["4"])],
-                  ])(d4()),
-                  State: cond([
-                    [equals(1), always(Parcours.Ennemies.state["1"])],
-                    [equals(2), always(Parcours.Ennemies.state["2"])],
-                    [equals(3), always(Parcours.Ennemies.state["3"])],
-                    [equals(4), always(Parcours.Ennemies.state["4"])],
-                    [equals(5), always(Parcours.Ennemies.state["5"])],
-                    [equals(6), always(Parcours.Ennemies.state["6"])],
-                    [equals(7), always(Parcours.Ennemies.state["7"])],
-                    [equals(8), always(Parcours.Ennemies.state["8"])],
-                    [equals(9), always(Parcours.Ennemies.state["9"])],
-                    [equals(10), always(Parcours.Ennemies.state["10"])],
-                  ])(d10()),
+                  title: "Ennemie",
+                  content:
+                    "- Relation: " +
+                    Parcours.Ennemies.statut[d10()] +
+                    "\n- Cause: " +
+                    Parcours.Ennemies.dueTo[d10()] +
+                    "\n- Influence: " +
+                    Parcours.Ennemies.influence[d4()] +
+                    "\n- Etat: " +
+                    Parcours.Ennemies.state[d10()],
                 };
               }
               break;
             case "relationship":
               const relationType = cond([
-                [equals(1), always("Histoire idyllique :")],
-                [inRange(2, 4), always("Tragédie romantique :")],
-                [inRange(5, 6), always("Relations compliquées :")],
-                [inRange(7, 10), always("Débauche et prostituées :")],
+                [equals(1), always("Histoire idyllique")],
+                [inRange(2, 4), always("Tragédie romantique")],
+                [inRange(5, 6), always("Relations compliquées")],
+                [inRange(7, 10), always("Débauche et prostituées")],
               ])(d10());
               debug.push(relationType);
               event = cond([
                 [
-                  equals("Histoire idyllique :"),
+                  equals("Histoire idyllique"),
                   always({
-                    title: "Histoire idyllique :",
+                    title: "Histoire idyllique",
                     content: "Un couple heureux... pour l'instant",
                   }),
                 ],
                 [
-                  equals("Tragédie romantique :"),
-                  always(Parcours.RelationShip.romanticTragedy[d10() + ""]),
-                ],
-                [
-                  equals("Relations compliquées :"),
-                  always(Parcours.RelationShip.complicatedTragedy[d10() + ""]),
-                ],
-                [
-                  equals("Débauche et prostituées :"),
+                  equals("Tragédie romantique"),
                   always({
-                    title: "Débauche et prostituées :",
+                    title: "Tragédie romantique",
+                    content: Parcours.RelationShip.romanticTragedy[d10()],
+                  }),
+                ],
+                [
+                  equals("Relations compliquées"),
+                  always({
+                    title: "Relations compliquées",
+                    content: Parcours.RelationShip.complicatedTragedy[d10()],
+                  }),
+                ],
+                [
+                  equals("Débauche et prostituées"),
+                  always({
+                    title: "Débauche et prostituées",
                     content:
                       "Vous avez passé votre temps a coucher a droite et a gauche... Qui sait, vous avez peut-etre semé une collection de bâtards dans votre sillage.",
                   }),

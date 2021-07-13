@@ -28,7 +28,7 @@ const Evenements = ({ events }) => {
               <TableRow>
                 <TableCell>{year}</TableCell>
                 <TableCell>{title}</TableCell>
-                <TableCell>{content}</TableCell>
+                <TableCell style={{ whiteSpace: "break-spaces" }}>{content}</TableCell>
               </TableRow>
             ))}
           </TableBody>
