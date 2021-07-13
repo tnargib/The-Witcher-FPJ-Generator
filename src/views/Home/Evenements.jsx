@@ -10,7 +10,6 @@ import {
 } from "@material-ui/core";
 
 const Evenements = ({ events }) => {
-  console.log(events);
   return (
     <Card>
       <CardHeader title="Evènements" />
